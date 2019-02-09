@@ -1,22 +1,39 @@
 import * as React from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import './App.css';
+import {Layout} from "./component/layout/Layout";
+import {Dashboard} from "./screen/dashboard/Dashboard";
 
-import logo from './logo.svg';
+interface IProps {
+    componentName?: string;
+}
 
-class App extends React.Component {
-  public render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+interface IState {
+    isOpen: boolean;
+}
+
+class App extends React.Component<IProps, IState> {
+
+    constructor(props: IProps) {
+        super(props);
+
+        this.state = {
+            isOpen: false
+        };
+    }
+
+    public render() {
+        return (
+            <BrowserRouter>
+                <Layout>
+                    <Switch>
+                        <Route exact={true} path='/' component={Dashboard} />
+                    </Switch>
+                </Layout>
+            </BrowserRouter>
+        );
+    }
+
 }
 
 export default App;
