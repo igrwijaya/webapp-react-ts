@@ -1,0 +1,31 @@
+.sidebar {
+    min-width: 300px;
+    max-width: 300px;
+    background: #2196f3;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.sidebar-header{
+    padding: 16px;
+    margin-bottom: 5px;
+
+}
+
+.metismenu{
+    background: transparent;
+}
+
+.metismenu-link{
+    color: #FFF;
+}
+
+.metismenu-link:hover{
+    text-decoration: none;
+}
+
+.metismenu::after,.metismenu-container .metismenu-container{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}

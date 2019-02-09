@@ -1,5 +1,7 @@
 import * as React from "react";
 import {Container} from "reactstrap";
+import './Layout.css';
+import {Sidebar} from "./Sidebar";
 import {Topbar} from "./Topbar";
 
 interface IProps {
@@ -14,12 +16,16 @@ export class Layout extends React.Component<IProps> {
 
     public render() {
         return (
-            <div>
-                <Topbar/>
+            <div className="wrapper">
+                <Sidebar/>
 
-                <Container fluid={true}>
-                    {this.props.children}
-                </Container>
+                <div className="content">
+                    <Topbar/>
+
+                    <Container fluid={true}>
+                        {this.props.children}
+                    </Container>
+                </div>
 
             </div>
         );
