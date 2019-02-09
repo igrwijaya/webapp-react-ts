@@ -25,9 +25,14 @@ export class Sidebar extends React.Component<IProps, IState> {
 
         const content=[
             {
+                icon: 'dashboard',
+                label: 'Dashboard',
+                to: '/',
+            },
+            {
                 icon: 'address-book',
                 label: 'Label of Item',
-                to: '#a-link',
+                to: 'dashboard',
             },
             {
                 icon: 'address-book',

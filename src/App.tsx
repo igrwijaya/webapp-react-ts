@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import './App.css';
 import {Layout} from "./component/layout/Layout";
 import {Dashboard} from "./screen/dashboard/Dashboard";
+import {Error404} from "./screen/error/Error404";
 
 interface IProps {
     componentName?: string;
@@ -28,6 +29,7 @@ class App extends React.Component<IProps, IState> {
                 <Layout>
                     <Switch>
                         <Route exact={true} path='/' component={Dashboard} />
+                        <Route path='**' component={Error404} />
                     </Switch>
                 </Layout>
             </BrowserRouter>
